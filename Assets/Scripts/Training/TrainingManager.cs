@@ -7,19 +7,14 @@ public class TrainingManager : MonoBehaviour {
     [SerializeField] private ParkingSlotGenerator _parkingSlotGenerator;
     [SerializeField] private GameObject _targetSlotPrefab;
     [SerializeField] private VehicleController _vehicleController;
+    [SerializeField] private SpawnArea[] _spawnAreas;
     
     private Transform _targetSlot;
     #endregion
     
-    #region Unity Methods
-    private void Start() {
-        //GenerateEpisode();  // Debug
-    }
-    #endregion
-    
     #region Public Methods
     public void GenerateEpisode() {
-        // TODO: Reset car
+        ResetVehicle();
         _parkingSlotGenerator.GenerateParkingSlots();
         Quaternion targetRotation = Quaternion.Euler(0f, _parkingSlotGenerator.GetTargetRotation(), 0f);
         _targetSlot = Instantiate(
@@ -38,6 +33,41 @@ public class TrainingManager : MonoBehaviour {
     
     public Vector3 GetTargetSlotPosition() {
         return _targetSlot.position;
+    }
+    #endregion
+    
+    #region Private Methods
+    private void ResetVehicle() {
+        SpawnArea spawnArea = GetRandomSpawnArea();
+        
+        float xPosition = Random.Range(spawnArea.renderer.bounds.min.x, spawnArea.renderer.bounds.max.x);
+        float zPosition = Random.Range(spawnArea.renderer.bounds.min.z, spawnArea.renderer.bounds.max.z);
+        Vector3 spawnPosition = new Vector3(xPosition, spawnArea.renderer.transform.position.y, zPosition);
+        
+        float yRotation = Random.Range(spawnArea.minRotation, spawnArea.maxRotation);
+        Quaternion spawnRotation = Quaternion.Euler(0f, yRotation, 0f);
+        
+        _vehicleController.ResetVehicle();
+        
+        _vehicleController.transform.position = spawnPosition;
+        _vehicleController.transform.rotation = spawnRotation;
+    }
+    
+    private SpawnArea GetRandomSpawnArea() {
+        float totalWeight = 0f;
+        foreach (SpawnArea spawnArea in _spawnAreas) {
+            totalWeight += spawnArea.weight;
+        }
+        float randomWeight = Random.Range(0f, totalWeight);
+        SpawnArea selectedSpawnArea = _spawnAreas[0];
+        foreach (SpawnArea spawnArea in _spawnAreas) {
+            randomWeight -= spawnArea.weight;
+            if (randomWeight <= 0f) {
+                selectedSpawnArea = spawnArea;
+                break;
+            }
+        }
+        return selectedSpawnArea;
     }
     #endregion
 }

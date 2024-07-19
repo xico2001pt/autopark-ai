@@ -41,6 +41,13 @@ public class VehicleController : MonoBehaviour {
     public void SetSteering(float steering) {
         _steering = Mathf.Clamp(steering, -1f, 1f);
     }
+    
+    public void ResetVehicle() {
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+        _throttle = 0f;
+        _steering = 0f;
+    }
     #endregion
     
     #region Private Methods

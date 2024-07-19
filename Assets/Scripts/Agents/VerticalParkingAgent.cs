@@ -22,14 +22,19 @@ public class VerticalParkingAgent : Agent {
     private float _episodeTime;
     private float _previousDistance;
     private float _currentDistance;
+
+    private bool _isTraining;
     #endregion
     
     #region Unity Methods
     private void Awake() {
         _vehicleController = GetComponent<VehicleController>();
+        _isTraining = false;
     }
 
     private void FixedUpdate() {
+        if (!_isTraining) return;
+        
         float deltaTime = Time.fixedDeltaTime;
         _episodeTime += deltaTime;
         
@@ -65,7 +70,9 @@ public class VerticalParkingAgent : Agent {
         _trainingManager.GenerateEpisode();
         _episodeTime = 0f;
         _currentDistance = _trainingManager.GetDistanceToTarget();
+        _isTraining = true;
     }
+    
     public override void CollectObservations(VectorSensor sensor) {
         sensor.AddObservation(transform.position);  // Vehicle position
         sensor.AddObservation(_trainingManager.GetTargetSlotPosition());  // Target slot position
