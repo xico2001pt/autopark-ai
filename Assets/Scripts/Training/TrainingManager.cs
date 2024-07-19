@@ -6,31 +6,38 @@ public class TrainingManager : MonoBehaviour {
     #region Fields
     [SerializeField] private ParkingSlotGenerator _parkingSlotGenerator;
     [SerializeField] private GameObject _targetSlotPrefab;
-    [SerializeField] private Transform _targetSlotParent;
-    [SerializeField] private Transform _carTransform;
+    [SerializeField] private VehicleController _vehicleController;
     
     private Transform _targetSlot;
     #endregion
     
     #region Unity Methods
     private void Start() {
-        GenerateEpisode();  // Debug
+        //GenerateEpisode();  // Debug
     }
     #endregion
     
     #region Public Methods
     public void GenerateEpisode() {
+        // TODO: Reset car
         _parkingSlotGenerator.GenerateParkingSlots();
-        _targetSlot.position = _parkingSlotGenerator.GetFreeParkingSlots()[0].position;
         Quaternion targetRotation = Quaternion.Euler(0f, _parkingSlotGenerator.GetTargetRotation(), 0f);
-        _targetSlot.rotation = targetRotation;
+        _targetSlot = Instantiate(
+            _targetSlotPrefab, 
+            _parkingSlotGenerator.GetFreeParkingSlots()[0].position, 
+            targetRotation,
+            _parkingSlotGenerator.GetVehicleParent()).transform;
     }
     public float GetDistanceToTarget() {
-        return Vector3.Distance(_carTransform.position, _targetSlot.position);
+        return Vector3.Distance(_vehicleController.transform.position, _targetSlot.position);
     }
     
-    public float GetRotationDotProduct() {
-        return Vector3.Dot(_carTransform.forward, _targetSlot.forward);
+    public float GetRotationAbsDotProduct() {
+        return Mathf.Abs(Vector3.Dot(_vehicleController.transform.forward, _targetSlot.forward));
+    }
+    
+    public Vector3 GetTargetSlotPosition() {
+        return _targetSlot.position;
     }
     #endregion
 }

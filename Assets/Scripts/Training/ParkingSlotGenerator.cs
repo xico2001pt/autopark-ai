@@ -31,6 +31,10 @@ public class ParkingSlotGenerator : MonoBehaviour {
     public float GetTargetRotation() {
         return _targetRotation;
     }
+    
+    public Transform GetVehicleParent() {
+        return _vehiclesParent;
+    }
     #endregion
     
     #region Private Methods
