@@ -28,6 +28,9 @@
 .idea/
 .vsconfig
 
+# Python Environments
+venv/
+
 # Gradle cache directory
 .gradle/
 
