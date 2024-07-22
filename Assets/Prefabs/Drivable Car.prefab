@@ -1258,7 +1258,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: _directionOffset.x
-      value: 0.6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
+      propertyPath: _directionOffset.y
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7051406563510356581, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1328,7 +1332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: _directionOffset.x
-      value: 0.6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
+      propertyPath: _directionOffset.y
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7051406563510356581, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1398,7 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: _directionOffset.x
-      value: -0.6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
+      propertyPath: _directionOffset.y
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7051406563510356581, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1464,7 +1476,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: _directionOffset.x
-      value: -0.6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280997843778840841, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
+      propertyPath: _directionOffset.y
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7051406563510356581, guid: 4820bd40d6ae3f0468ff07f43c7bdf69, type: 3}
       propertyPath: m_LocalPosition.x

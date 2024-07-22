@@ -32,7 +32,11 @@ public class TrainingManager : MonoBehaviour {
     }
     
     public Vector3 GetTargetSlotPosition() {
-        return _targetSlot.position;
+        return _targetSlot.localPosition;
+    }
+    
+    public Vector3 GetTargetSlotRotation() {
+        return _targetSlot.localEulerAngles;
     }
     #endregion
     

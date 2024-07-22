@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SensorController : MonoBehaviour {
     #region Fields
-    [SerializeField] private Vector3 _directionOffset = new Vector3(0f, 0f, 0f);
+    [SerializeField] private Vector3 _directionOffset = new Vector3(0f, 0f, 0f);  // In degrees
     [SerializeField] private float _maxRayDistance = 6f;
     [SerializeField] private bool _drawDebugRay = true;
     [SerializeField] private Gradient _rayColor;
@@ -15,7 +15,8 @@ public class SensorController : MonoBehaviour {
     
     #region Unity Methods
     private void FixedUpdate() {
-        _direction = (transform.up + _directionOffset).normalized;
+        _direction = Quaternion.Euler(_directionOffset) * transform.up;
+        _direction.Normalize();
         
         RaycastHit hit;
         if (Physics.Raycast(transform.position, _direction, out hit, _maxRayDistance)) {

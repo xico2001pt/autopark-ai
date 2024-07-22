@@ -5,4 +5,5 @@ public struct AgentRewards {
     public float DistanceToTarget;  // Reward for getting closer to the target
     public float CollisionPenalty;  // Reward penalty for colliding with obstacles
     public float ParkingReward;  // Reward for parking the vehicle
+    public float ParkingRotationReward;  // Reward for aligning the vehicle with the target rotation
 }
