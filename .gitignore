@@ -10,6 +10,8 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Rr]esults/
+/Assets/ML-Agents/
+/Assets/ML-Agents.meta
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
