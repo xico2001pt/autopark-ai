@@ -1,5 +1,7 @@
-# AutoPark AI
+# AutoParkAI
 An AI agent that learns to park a vehicle in a vertical parking spot using **Reinforcement Learning**.
+
+![Training Environment](training-environment.png)
 
 ## Table of Contents
 - [Problem Formalization](#problem-formalization)

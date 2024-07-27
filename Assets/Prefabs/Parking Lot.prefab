@@ -618,15 +618,15 @@ MonoBehaviour:
   _vehicleController: {fileID: 2269610685835396952}
   _spawnAreas:
   - renderer: {fileID: 265402004696599425}
-    weight: 50
+    weight: 60
     minRotation: 0
     maxRotation: 360
   - renderer: {fileID: 3937195825347944782}
-    weight: 25
+    weight: 20
     minRotation: -3
     maxRotation: 3
   - renderer: {fileID: 3937195825347944782}
-    weight: 25
+    weight: 20
     minRotation: 177
     maxRotation: 183
 --- !u!1 &7815710054232267528
@@ -1253,10 +1253,6 @@ PrefabInstance:
       value: Drivable Car
       objectReference: {fileID: 0}
     - target: {fileID: 3423435258685088582, guid: c8ee4492288b7fd43a57f5ef62e15d01, type: 3}
-      propertyPath: _maxSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423435258685088582, guid: c8ee4492288b7fd43a57f5ef62e15d01, type: 3}
       propertyPath: _maxMotorTorque
       value: 2500
       objectReference: {fileID: 0}
@@ -1372,14 +1368,14 @@ MonoBehaviour:
   - {fileID: 8984059540446418576}
   - {fileID: 8433129634737736082}
   _rewards:
-    DurationPenalty: 0.01
+    DurationPenalty: -0.01
     TimeFailurePenalty: -650
     DistanceToTarget: 50
     CollisionPenalty: -600
     ParkingReward: 4000
     ParkingRotationReward: 1500
   _maxEpisodeSteps: 9000
-  _finishDistance: 0.55
+  _finishDistance: 0.6
   _finishRotationDotProduct: 0.99
 --- !u!114 &181139376309308656
 MonoBehaviour:

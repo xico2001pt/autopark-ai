@@ -16,5 +16,5 @@ behaviors:
         strength: 0.99
     max_steps: 100000000
     time_horizon: 64
-    summary_freq: 20000
+    summary_freq: 100000
     threaded: true
