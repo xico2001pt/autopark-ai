@@ -1375,7 +1375,7 @@ MonoBehaviour:
     ParkingReward: 4000
     ParkingRotationReward: 1500
   _maxEpisodeSteps: 9000
-  _finishDistance: 0.6
+  _finishDistance: 0.7
   _finishRotationDotProduct: 0.99
 --- !u!114 &181139376309308656
 MonoBehaviour:
