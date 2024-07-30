@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _directionOffset: {x: 0, y: 0, z: 0}
-  _maxRayDistance: 6
+  _maxRayDistance: 35
   _drawDebugRay: 1
   _rayColor:
     serializedVersion: 2
