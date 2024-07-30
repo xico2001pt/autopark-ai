@@ -1,7 +1,7 @@
 # AutoParkAI
 An AI agent that learns to park a vehicle in a vertical parking spot using **Reinforcement Learning**.
 
-![Training Environment](training-environment.png)
+![Demo](autopark-ai-demo.gif)
 
 ## Table of Contents
 - [Problem Formalization](#problem-formalization)
@@ -67,6 +67,8 @@ The model architecture is defined as follows:
 
 ### Training Environment
 The training environment is implemented in Unity using the ML-Agents Toolkit. The environment is a 3D simulation of a parking lot with a vehicle and parking spots with other vehicles as obstacles. The agent is trained to park the vehicle in a vertical parking spot. There are two spawn areas for the vehicle and parking spots, which allows the agent to learn parking in different scenarios.
+
+![Training Environment](training-environment.png)
 
 ## Installation
 The prerequisites for this project are:
